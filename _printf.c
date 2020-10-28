@@ -17,7 +17,7 @@ int auxiliar(const char *format, va_list args, op_t *options)
 		flag = 0;
 	if (format[i] == '%')
 	{
-		if (format[i] == '%' && format[i +1] == '\0')
+		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 		while (options[j].c != '\0')
 		{
