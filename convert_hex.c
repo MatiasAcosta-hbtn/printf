@@ -62,6 +62,8 @@ int print_hexa(va_list args)
 	char *string;
 
 	n = va_arg(args, unsigned int);
+	if (n == 0)
+		return (0);
 	length = hexa_length(n);
 	string = malloc((length * sizeof(char)) + 1);
 	if (string == NULL)
@@ -130,6 +132,8 @@ int print_hexa_cap(va_list args)
 	char *string;
 
 	n = va_arg(args, unsigned int);
+	if (n == 0)
+		return (0);
 	length = hexa_length(n);
 	string = malloc((length * sizeof(char)) + 1);
 	if (string == NULL)
