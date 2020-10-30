@@ -84,7 +84,6 @@ int print_rot13(va_list args)
 		return (0);
 	while (string[i])
 	{
-		flag = 0;
 		for (j = 0; j <= 51; j++)
 		{
 			if (string[i] == letras[j])
