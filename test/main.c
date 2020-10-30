@@ -8,7 +8,9 @@ int main(void)
  unsigned int ui;
  int len, len2;
 
-
+_printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
+_printf("Complete the sentence: You %R nothing, Jon Snow.\n", "xabj");
+_printf("Complete the sentence: You %R nothing, Jon Snow.\n", "");
 	len = _printf("%d\n",-123456789);
 	_printf("%i\n", len);
 	_printf("%i\n",INT_MAX);
