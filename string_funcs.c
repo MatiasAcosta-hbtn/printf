@@ -80,8 +80,6 @@ int print_rot13(va_list args)
 	char *string;
 
 	string = va_arg(args, char *);
-	if (string == NULL)
-		return (-1);
 	while (string[i])
 	{
 		for (j = 0; j <= 51; j++)
