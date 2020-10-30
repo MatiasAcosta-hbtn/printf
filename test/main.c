@@ -7,7 +7,7 @@ int main(void)
  char str[] = "julian";
  unsigned int ui;
  int len, len2;
-
+_printf("%S\n", "Holberton\nSchool");
 _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
 _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "xabj");
 _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "");

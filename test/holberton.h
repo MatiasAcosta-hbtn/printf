@@ -37,4 +37,6 @@ int bin_length(int);
 int hexa_length(unsigned int);
 int octal_length(unsigned int);
 int _putchar(const char);
+void _print_hexa(unsigned int);
+int print_string_ascii(va_list);
 #endif

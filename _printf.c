@@ -62,7 +62,7 @@ int _printf(const char *format, ...)
 		{'d', print_integer}, {'i', print_integer}, {'b', print_binary},
 		{'u', print_uns_int}, {'o', print_octal}, {'x', print_hexa},
 		{'X', print_hexa_cap}, {'r', print_reversed}, {'R', print_rot13},
-		{'\0', NULL}
+		{'S', print_string_ascii}, {'\0', NULL}
 };
 	va_start(args, format);
 	if (!format || (format[0] == '%' && format[1] == '\0'))

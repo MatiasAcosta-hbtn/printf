@@ -1,20 +1,24 @@
 #include "holberton.h"
 
 /**
- * _printf - the printf function
+ * auxiliar - the printf auxiliar function
  * @format: the string
+ * @args: arguments passed
+ * @options: the options of functions
  * Return: the characters printed
  */
 
 int auxiliar(const char *format, va_list args, op_t *options)
 {
-	int flag = 0, i = 0, j = 0, count = 0;	
+	int flag = 0, i = 0, j = 0, count = 0;
 
 	while (format[i] != '\0' && format)
 	{
 		flag = 0;
 	if (format[i] == '%')
 	{
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return (-1);
 		while (options[j].c != '\0')
 		{
 			if (format[i + 1] == options[j].c)
@@ -43,6 +47,12 @@ int auxiliar(const char *format, va_list args, op_t *options)
 	return (count);
 }
 
+/**
+ * _printf - the printf function
+ * @format: the string
+ * Return: the characters printed
+ */
+
 int _printf(const char *format, ...)
 {
 	int count = 0;
@@ -51,8 +61,8 @@ int _printf(const char *format, ...)
 		{'%', print_percent}, {'c', print_char}, {'s', print_string},
 		{'d', print_integer}, {'i', print_integer}, {'b', print_binary},
 		{'u', print_uns_int}, {'o', print_octal}, {'x', print_hexa},
-		{'X', print_hexa_cap}, {'r', print_reversed},{'R', print_rot13},
-		{'\0', NULL}
+		{'X', print_hexa_cap}, {'r', print_reversed}, {'R', print_rot13},
+		{'S', print_string_ascii}, {'\0', NULL}
 };
 	va_start(args, format);
 	if (!format || (format[0] == '%' && format[1] == '\0'))
