@@ -68,7 +68,7 @@ int print_binary(va_list args)
 		return (-1);
 	for (j = i - 1; j >= 0; j--)
 		_putchar(arr[j] + 48);
-	return (length);
+	return (i);
 }
 
 /**

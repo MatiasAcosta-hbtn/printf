@@ -26,6 +26,10 @@ int print_string(va_list args)
 	int n = 0;
 
 	s = va_arg(args, char *);
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
 	n = _strlen(s);
 	write(1, s, n);
 	return (n);
@@ -70,24 +74,28 @@ int print_reversed(va_list args)
 
 int print_rot13(va_list args)
 {
-	int i = 0, j = 0;
+	int i = 0, j = 0, flag = 0;
 	char letras[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char root13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *string;
 
 	string = va_arg(args, char *);
-	if (string == NULL)
-		return (-1);
-	while (*(string + i) != 0 && string)
+	if (string[0] == '\0')
+		return (0);
+	while (string[i])
 	{
-		for (j = 0; j <= 52; j++)
+		flag = 0;
+		for (j = 0; j <= 51; j++)
 		{
-			if (*(string + i) == letras[j])
+			if (string[i] == letras[j])
 			{
+				flag = 1;
 				_putchar(root13[j]);
 				break;
 			}
 		}
+		if (flag != 1)
+			_putchar(string[i]);
 		i++;
 	}
 	return (i);
