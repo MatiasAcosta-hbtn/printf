@@ -3,15 +3,17 @@
 #include <limits.h>
 int main(void)
 {
- char c = 'h';
- char str[] = "julian";
- unsigned int ui;
- int len, len2;
 _printf("%S\n", "Holberton\nSchool");
 _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
 _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "xabj");
 _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "");
-	len = _printf("%d\n",-123456789);
+_printf("%S", "\n");
+_printf("%S", "No special character.");
+_printf("%S", "\x01\x02\x03\x04\x05\x06\x07");
+_printf("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
+_printf("- What did you say?\n- %S\n- That's what I thought.\n", "");
+
+/*	len = _printf("%d\n",-123456789);
 	_printf("%i\n", len);
 	_printf("%i\n",INT_MAX);
  printf("en printf normal:%d\n",INT_MAX);
@@ -52,6 +54,6 @@ _printf("Unsigned octal:[%o]\n", ui);
   _printf("Unknown:[%R]\n", "probando rot13");
 len = _printf("%d\n",12345);
 len2 = printf("%d\n",len);
-_printf("%d\n",len2);
+_printf("%d\n",len2);*/
 return(0);
 }

@@ -50,6 +50,8 @@ int print_string_ascii(va_list args)
 	string = va_arg(args, char*);
 	if (string == NULL)
 		return (-1);
+	if (string[0] == '\0')
+		return (0);
 	while(string[i] != '\0')
 	{
 		if ((string[i] > 0 && string[i] <= 32) || string[i] >= 127)
