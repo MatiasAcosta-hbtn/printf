@@ -82,11 +82,11 @@ int print_rot13(va_list args)
 	string = va_arg(args, char *);
 	if (string == NULL)
 		return (-1);
-	while (*(string + i) != 0 && string)
+	while (string[i])
 	{
-		for (j = 0; j <= 52; j++)
+		for (j = 0; j <= 51; j++)
 		{
-			if (*(string + i) == letras[j])
+			if (string[i] == letras[j])
 			{
 				_putchar(root13[j]);
 				break;
