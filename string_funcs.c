@@ -80,7 +80,7 @@ int print_rot13(va_list args)
 	char *string;
 
 	string = va_arg(args, char *);
-	if (string == "")
+	if (string[0] == '\0')
 		return (0);
 	while (string[i])
 	{
