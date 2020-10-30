@@ -74,7 +74,7 @@ int print_reversed(va_list args)
 
 int print_rot13(va_list args)
 {
-	int i = 0, j = 0, flag = 0;
+	int i = 0, j = 0;
 	char letras[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char root13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *string;
@@ -89,12 +89,11 @@ int print_rot13(va_list args)
 		{
 			if (string[i] == letras[j])
 			{
-				flag = 1;
 				_putchar(root13[j]);
 				break;
 			}
 		}
-		if (flag != 1)
+		if (j > 51)
 			_putchar(string[i]);
 		i++;
 	}
